@@ -47,4 +47,35 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+
+    <DataTemplate x:Key="TrackListItemTemplate">
+            <DockPanel LastChildFill="True">
+                <Border Height="1"
+                        BorderBrush="#A2A2AD"
+                        BorderThickness="1"
+                        DockPanel.Dock="Bottom" />
+                <Label DockPanel.Dock="Left"
+                       VerticalContentAlignment="Center"
+                       Margin="10,10,20,10"
+                       Content="{Binding Path=Number, FallbackValue=1.}" />
+                <StackPanel DockPanel.Dock="Left"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
+                    <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
+                               FontSize="9" />
+                </StackPanel>
+                <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="25,0"
+                           DockPanel.Dock="Right" />
+                <customcontrols:CustomizableButton Height="12"
+                                                   Width="12"
+                                                   HorizontalAlignment="Right"
+                                                   DockPanel.Dock="Right">
+                    <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
+                </customcontrols:CustomizableButton>
+            </DockPanel>
+    </DataTemplate>
 </ResourceDictionary>

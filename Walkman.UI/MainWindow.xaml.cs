@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using Walkman.UI.ViewModels;
 
 namespace Walkman.UI
 {
@@ -8,6 +9,7 @@ namespace Walkman.UI
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new WindowViewModel();
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)

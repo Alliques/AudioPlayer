@@ -6,15 +6,16 @@
              xmlns:local="clr-namespace:Walkman.UI.Controls"
              xmlns:customcontrols="clr-namespace:Walkman.UI.Controls.CustomControls"
              mc:Ignorable="d"
-             MaxHeight="200"
-             MinHeight="200"
+             MaxHeight="175"
+             MinHeight="175"
              d:DesignWidth="678">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="175" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Border CornerRadius="15" Background="Gray">
+        <Border CornerRadius="15"
+                Background="Gray">
             <!--<Border.Background>
                 <ImageBrush Stretch="Uniform"/>
             </Border.Background>-->
@@ -29,40 +30,49 @@
                     </Style>
                 </Grid.Resources>
                 <Grid.RowDefinitions>
-                    <RowDefinition />
+                    <RowDefinition  Height="auto"/>
                     <RowDefinition Height="auto" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0"
                            FontSize="40"
+                           FontWeight="Bold"
                            Text="{Binding Title, FallbackValue=Forever in bloom}" />
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" Margin="0,10,0,0">
                     <StackPanel>
                         <Grid>
-                            <TextBlock Text="{Binding Artist, FallbackValue=Vacations}" />
-                            <TextBlock Text="{Binding Artist, FallbackValue=13 songs}"
-                                       TextAlignment="Right" />
+                            <TextBlock Text="{Binding Artist, FallbackValue=Vacations}"
+                                       FontWeight="Bold" />
+                            <TextBlock Text="{Binding SongCount, FallbackValue=13 songs}"
+                                       FontWeight="Medium"
+                                       TextAlignment="Right"
+                                       Foreground="#4C4C55"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="{Binding Year, FallbackValue=2020}" />
-                            <TextBlock Text="{Binding Year, FallbackValue=50 minutes 53 seconds}"
-                                       TextAlignment="Right" />
+                            <TextBlock Text="{Binding Year, FallbackValue=2020}"
+                                       FontWeight="Medium"
+                                       Foreground="#4C4C55"/>
+                            <TextBlock Text="{Binding TotalSongsLenght, FallbackValue=50 minutes 53 seconds}"
+                                       TextAlignment="Right"
+                                       FontWeight="Medium"
+                                       Foreground="#4C4C55"/>
                         </Grid>
                         <Border Margin="0,10,0,0"
                                 Height="1"
-                                BorderBrush="#9d9dA5"
+                                BorderBrush="#A2A2AD"
                                 BorderThickness="1" />
                     </StackPanel>
                 </Grid>
                 <StackPanel Grid.Row="2"
-                            Orientation="Horizontal">
-                    <customcontrols:CustomizableButton Height="40">
+                            Orientation="Horizontal" VerticalAlignment="Bottom">
+                    <customcontrols:CustomizableButton Height="30">
                         <ContentPresenter  ContentTemplate="{StaticResource PlayCircle}" />
                     </customcontrols:CustomizableButton>
-                    <customcontrols:CustomizableButton Height="40" Margin="20,0">
+                    <customcontrols:CustomizableButton Height="25"
+                                                       Margin="20,0">
                         <ContentPresenter  ContentTemplate="{StaticResource Heart}" />
                     </customcontrols:CustomizableButton>
-                    <customcontrols:CustomizableButton Height="30">
+                    <customcontrols:CustomizableButton Height="18">
                         <ContentPresenter  ContentTemplate="{StaticResource AddToPlaylist}" />
                     </customcontrols:CustomizableButton>
                 </StackPanel>
