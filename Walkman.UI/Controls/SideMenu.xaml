@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="Walkman.UI.Controls.SideMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Walkman.UI.Controls"
+             mc:Ignorable="d"
+             xmlns:container="clr-namespace:Walkman.UI.Controls"
+             xmlns:customcontrols="clr-namespace:Walkman.UI.Controls.CustomControls"
+             d:DesignHeight="450"
+             d:DesignWidth="273.606">
+    <Border Style="{StaticResource TransparentBorder}">
+        <Border.Background>
+            <SolidColorBrush Color="White" Opacity="0.65"/>
+        </Border.Background>
+        <Grid>
+            <StackPanel>
+                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
+                        Height="18"
+                        Margin="0,7,0,7">
+                    <StackPanel Orientation="Horizontal">
+                        <ContentPresenter Height="12"
+                                          ContentTemplate="{StaticResource Gear}" />
+                        <TextBlock Text="Settings"
+                                   FontWeight="Medium"
+                                   Margin="5,0,0,0"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </customcontrols:CustomizableButton>
+                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
+                        Margin="0,7,0,7"
+                        Height="18">
+                    <StackPanel Orientation="Horizontal">
+                        <ContentPresenter Height="12"
+                                          ContentTemplate="{StaticResource Home}" />
+                        <TextBlock Text="Home"
+                                   FontWeight="Medium"
+                                   Margin="5,0,0,0"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </customcontrols:CustomizableButton>
+                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
+                        Margin="0,7,0,7"
+                        Height="18">
+                    <StackPanel Orientation="Horizontal">
+                        <ContentPresenter Height="12"
+                                          ContentTemplate="{StaticResource Search}" />
+                        <TextBlock Text="Search"
+                                   FontWeight="Medium"
+                                   Margin="5,0,0,0"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </customcontrols:CustomizableButton>
+                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
+                        Margin="0,7,0,7"
+                        Height="18">
+                    <StackPanel Orientation="Horizontal">
+                        <ContentPresenter Height="12"
+                                          ContentTemplate="{StaticResource Radio}" />
+                        <TextBlock Text="Radio"
+                                   FontWeight="Medium"
+                                   Margin="5,0,0,0"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </customcontrols:CustomizableButton>
+                <Label  Content="Playlists"
+                        Margin="0,15,0,5"
+                        Padding="0"
+                        Foreground="#878787"
+                        FontSize="16" />
+
+                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
+                        Margin="0,7,0,7"
+                        Height="18">
+                    <StackPanel Orientation="Horizontal">
+                        <ContentPresenter Height="12"
+                                          ContentTemplate="{StaticResource MusicNote}" />
+                        <TextBlock Text="Rock"
+                                   FontWeight="Medium"
+                                   Margin="5,0,0,0"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </customcontrols:CustomizableButton>
+                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
+                        Margin="0,7,0,7"
+                        Height="18">
+                    <StackPanel Orientation="Horizontal">
+                        <ContentPresenter Height="12"
+                                          ContentTemplate="{StaticResource MusicNote}" />
+                        <TextBlock Text="Chill"
+                                   FontWeight="Medium"
+                                   Margin="5,0,0,0"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </customcontrols:CustomizableButton>
+                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
+                        Margin="0,7,0,7"
+                        Height="18">
+                    <StackPanel Orientation="Horizontal">
+                        <ContentPresenter Height="12"
+                                          ContentTemplate="{StaticResource MusicNote}" />
+                        <TextBlock Text="Pop"
+                                   FontWeight="Medium"
+                                   Margin="5,0,0,0"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </customcontrols:CustomizableButton>
+            </StackPanel>
+            <customcontrols:CustomizableButton VerticalAlignment="Bottom"
+                                               CornerRadius="12"
+                                               Content="+ Add"
+                                               Width="70"
+                                               Opacity="1"
+                                               Height="30"
+                                               FontSize="10"
+                                               HorizontalContentAlignment="Center"
+                                               Foreground="White"
+                                               Background="#6682DB" />
+        </Grid>
+    </Border>
+</UserControl>
