@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Walkman.UI.Controls"
+             xmlns:customcontrols="clr-namespace:Walkman.UI.Controls.CustomControls"
              mc:Ignorable="d"
              MaxHeight="75"
              MinHeight="75"
@@ -59,19 +60,74 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition />
                     <ColumnDefinition />
                     <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding CurrentTrackTiming, FallbackValue='2:28'}"
+                           VerticalAlignment="Bottom" />
+                <customcontrols:CustomizableButton Grid.Column="1"
+                                                   HorizontalAlignment="Right"
+                                                   Height="12">
+                    <ContentPresenter  ContentTemplate="{StaticResource Shuffle}" />
+                </customcontrols:CustomizableButton>
+                <customcontrols:CustomizableButton Grid.Column="2"
+                                                   HorizontalAlignment="Right"
+                                                   Height="18">
+                    <ContentPresenter  ContentTemplate="{StaticResource PreviousTrack}" />
+                </customcontrols:CustomizableButton>
+                <customcontrols:CustomizableButton Grid.Column="3"
+                                                   HorizontalAlignment="Center"
+                                                   Height="30">
+                    <ContentPresenter  ContentTemplate="{StaticResource Play}" />
+                </customcontrols:CustomizableButton>
+                <customcontrols:CustomizableButton Grid.Column="4"
+                                                   HorizontalAlignment="Left"
+                                                   Height="18">
+                    <ContentPresenter  ContentTemplate="{StaticResource NextTrack}" />
+                </customcontrols:CustomizableButton>
+                <customcontrols:CustomizableButton Grid.Column="5"
+                                                   HorizontalAlignment="Left"
+                                                   Height="15">
+                    <ContentPresenter  ContentTemplate="{StaticResource Repeat}" />
+                </customcontrols:CustomizableButton>
+                <TextBlock Grid.Column="7"
+                           Text="{Binding TotalTrackLength, FallbackValue='5:49'}"
+                           VerticalAlignment="Bottom" />
                 <Slider Style="{DynamicResource SliderStyle}"
+                        Margin="-6,0"
                         SelectionStart="0"
                         IsSelectionRangeEnabled="True"
                         Grid.Row="1"
                         Grid.ColumnSpan="7"
-                        Value="0"
+                        Value="7"
+                        SelectionEnd="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Value}" />
+
+            </Grid>
+            <Grid Grid.Column="2"
+                  Margin="0,0,15,0"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <customcontrols:CustomizableButton Grid.Column="1"
+                                                   HorizontalAlignment="Left"
+                                                   Height="15">
+                    <ContentPresenter  ContentTemplate="{StaticResource Sound}" />
+                </customcontrols:CustomizableButton>
+                <Slider Grid.Column="2"
+                        VerticalAlignment="Center"
+                        Style="{DynamicResource SliderStyle}"
+                        HorizontalAlignment="Stretch"
+                        SelectionStart="0"
+                        IsSelectionRangeEnabled="True"
+                        Value="7"
                         SelectionEnd="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Value}" />
             </Grid>
         </Grid>

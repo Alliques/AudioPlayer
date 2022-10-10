@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Walkman.UI"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="450"
-        Width="800"
+        Height="537"
+        Width="1135"
         AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
@@ -150,7 +150,7 @@
                                  ItemContainerStyle="{StaticResource TrackListBoxItemStyle}"
                                  BorderThickness="0">
 
-                            <ListBoxItem >
+                            <ListBoxItem>
                                 <DockPanel LastChildFill="True">
                                     <Border Height="1"
                                             BorderBrush="#A2A2AD"
