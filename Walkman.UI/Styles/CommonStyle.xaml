@@ -58,38 +58,6 @@
         </Setter>
     </Style>
 
-
-    <DataTemplate x:Key="TrackListItemTemplate">
-        <DockPanel LastChildFill="True">
-            <Border Height="1"
-                    BorderBrush="#A2A2AD"
-                    BorderThickness="1"
-                    DockPanel.Dock="Bottom" />
-            <Label DockPanel.Dock="Left"
-                   VerticalContentAlignment="Center"
-                   Margin="10,10,20,10"
-                   Content="{Binding Path=Number, FallbackValue=1.}" />
-            <StackPanel DockPanel.Dock="Left"
-                        VerticalAlignment="Center">
-                <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                           FontSize="9" />
-            </StackPanel>
-            <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Right"
-                       Margin="25,0"
-                       DockPanel.Dock="Right" />
-            <customcontrols:CustomizableButton Height="12"
-                                               Width="12"
-                                               HorizontalAlignment="Right"
-                                               DockPanel.Dock="Right">
-                <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-            </customcontrols:CustomizableButton>
-        </DockPanel>
-    </DataTemplate>
-
-
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
@@ -102,6 +70,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
     </Style>
     <SolidColorBrush x:Key="ScrollBar.Static.Background"
                      Color="#F0F0F0" />
@@ -133,61 +102,7 @@
                      Color="#F0F0F0" />
     <SolidColorBrush x:Key="ScrollBar.Disabled.Glyph"
                      Color="#BFBFBF" />
-    <!--<Style x:Key="RepeatButtonTransparent"
-           TargetType="{x:Type RepeatButton}">
-        <Setter Property="OverridesDefaultStyle"
-                Value="true" />
-        <Setter Property="Background"
-                Value="Transparent" />
-        <Setter Property="Focusable"
-                Value="false" />
-        <Setter Property="IsTabStop"
-                Value="false" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type RepeatButton}">
-                    <Rectangle Fill="{TemplateBinding Background}"
-                               Height="{TemplateBinding Height}"
-                               Width="{TemplateBinding Width}" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>-->
-    <!--<Style x:Key="ScrollBarButton"
-           TargetType="{x:Type RepeatButton}">
-        <Setter Property="FocusVisualStyle"
-                Value="{StaticResource FocusVisual}" />
-        <Setter Property="BorderThickness"
-                Value="1" />
-        <Setter Property="HorizontalContentAlignment"
-                Value="Center" />
-        <Setter Property="VerticalContentAlignment"
-                Value="Center" />
-        <Setter Property="Padding"
-                Value="1" />
-        <Setter Property="Focusable"
-                Value="false" />
-        <Setter Property="IsTabStop"
-                Value="false" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type RepeatButton}">
-                    <Border x:Name="border"
-                            Background="{StaticResource ScrollBar.Static.Background}"
-                            BorderBrush="{StaticResource ScrollBar.Static.Border}"
-                            BorderThickness="1"
-                            SnapsToDevicePixels="true">
-                        <ContentPresenter x:Name="contentPresenter"
-                                          Focusable="False"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          Margin="{TemplateBinding Padding}"
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>-->
+ 
     <Style x:Key="ScrollBarThumbVertical"
            TargetType="{x:Type Thumb}">
         <Setter Property="OverridesDefaultStyle"
@@ -228,6 +143,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
     <Style x:Key="ScrollBarStyle"
            TargetType="{x:Type ScrollBar}">
         <Setter Property="Stylus.IsPressAndHoldEnabled"
@@ -299,7 +215,6 @@
         </Style.Triggers>-->
     </Style>
 
-
     <Style x:Key="ScrollViewerStyle"
            TargetType="{x:Type customcontrols:CustomScrollViewer}">
         <Setter Property="Template">
@@ -364,10 +279,6 @@
         </Style.Triggers>
     </Style>
 
-
-
-
-
     <SolidColorBrush x:Key="ListBox.Static.Background"
                      Color="#FFFFFFFF" />
     <SolidColorBrush x:Key="ListBox.Static.Border"
@@ -409,7 +320,7 @@
                             SnapsToDevicePixels="true">
                         <customcontrols:CustomScrollViewer Focusable="false"
                                                            Style="{DynamicResource ScrollViewerStyle}"
-                                                         Padding="{TemplateBinding Padding}">
+                                                           Padding="{TemplateBinding Padding}">
                             <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </customcontrols:CustomScrollViewer>
                     </Border>
@@ -438,4 +349,142 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+
+
+    <SolidColorBrush x:Key="Item.MouseOver.Background"
+                     Color="#1F26A0DA" />
+    <SolidColorBrush x:Key="Item.MouseOver.Border"
+                     Color="Transparent" />
+    <SolidColorBrush x:Key="Item.SelectedActive.Background"
+                     Color="#3D26A0DA" />
+    <SolidColorBrush x:Key="Item.SelectedActive.Border"
+                     Color="Transparent" />
+    <SolidColorBrush x:Key="Item.SelectedInactive.Background"
+                     Color="#3DDADADA" />
+    <SolidColorBrush x:Key="Item.SelectedInactive.Border"
+                     Color="#FFDADADA" />
+    <SolidColorBrush x:Key="Item.SelectedInactive.Foreground"
+                     Color="#6682DB" />
+    <Color x:Key="Item.SelectedInactive.ForegroundColor">#6682DB</Color>
+    <Style x:Key="TrackListBoxItemStyle"
+           TargetType="{x:Type ListBoxItem}">
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="Padding"
+                Value="4,1" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment"
+                Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="BorderBrush"
+                Value="Transparent" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="FocusVisualStyle"
+                Value="{StaticResource FocusVisual}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <DockPanel x:Name="contentContainer"
+                               LastChildFill="True"
+                               Background="Transparent">
+                        <Border Height="1"
+                                BorderBrush="#A2A2AD"
+                                BorderThickness="1"
+                                DockPanel.Dock="Bottom" />
+                        <TextBlock DockPanel.Dock="Left"
+                                   TextAlignment="Center"
+                                   Margin="10,15,20,15"
+                                   Text="{Binding Path=Number, FallbackValue=1.}" />
+                        <StackPanel DockPanel.Dock="Left"
+                                    VerticalAlignment="Center">
+                            <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
+                            <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
+                                       FontSize="9" />
+                        </StackPanel>
+                        <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"
+                                   Margin="20,0,25,0"
+                                   DockPanel.Dock="Right" />
+                        <customcontrols:CustomizableButton Height="15"
+                                                           Width="15"
+                                                           Padding="0,2,0,0"
+                                                           HorizontalAlignment="Right"
+                                                           DockPanel.Dock="Right">
+                            <Viewbox Stretch="Uniform">
+                                <Path Fill="Black"
+                                      x:Name="Heart"
+                                      Data="m348.151,31.514c-19.883,-19.884 -46.315,-30.826 -74.435,-30.826c-28.124,0 -54.559,10.942 -74.449,30.826l-9.798,
+                  9.8l-9.798,-9.8c-19.884,-19.884 -46.325,-30.826 -74.443,-30.826c-28.117,0 -54.56,10.942 -74.442,30.826c-41.049,
+                  41.053 -41.049,107.848 0,148.885l147.09,147.091c2.405,2.414 5.399,3.892 8.527,4.461c1.049,0.207 2.104,0.303 3.161,
+                  0.303c4.161,0 8.329,-1.587 11.498,-4.764l147.09,-147.091c41.051,-41.037 41.051,-107.832 -0.001,-148.885zm-22.996,
+                  125.89l-135.685,135.687l-135.688,-135.687c-28.368,-28.364 -28.368,-74.514 0,-102.893c13.741,-13.739 32.017,-21.296 51.446,
+                  -21.296c19.431,0 37.702,7.557 51.438,21.296l21.305,21.312c6.107,6.098 16.897,6.098 23.003,0l21.297,-21.312c13.737,
+                  -13.739 32.009,-21.296 51.446,-21.296c19.431,0 37.701,7.557 51.438,21.296c28.371,28.379 28.371,74.528 0,102.893z" />
+                            </Viewbox>
+                        </customcontrols:CustomizableButton>
+                    </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Shape.Fill"
+                                    TargetName="Heart"
+                                    Value="{StaticResource Item.SelectedInactive.Foreground}" />
+                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="{StaticResource Item.SelectedInactive.ForegroundColor}"
+                                                        Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                        Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="Black"
+                                                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                    Duration="0:0:0.2" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Selector.IsSelectionActive"
+                                           Value="True" />
+                                <Condition Property="IsSelected"
+                                           Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="TextBlock.Foreground"
+                                    TargetName="contentContainer"
+                                    Value="{StaticResource Item.SelectedInactive.Foreground}" />
+                            <Setter Property="Shape.Fill"
+                                    TargetName="Heart"
+                                    Value="{StaticResource Item.SelectedInactive.Foreground}" />
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="TextElement.Foreground"
+                                    TargetName="contentContainer"
+                                    Value="{StaticResource Item.SelectedInactive.Foreground}" />
+                            <Setter Property="Shape.Fill"
+                                    TargetName="Heart"
+                                    Value="{StaticResource Item.SelectedInactive.Foreground}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    
 </ResourceDictionary>

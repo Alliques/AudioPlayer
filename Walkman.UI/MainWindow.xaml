@@ -107,11 +107,11 @@
                 </Button>
             </StackPanel>
             <Grid Grid.Row="1"
-                  Margin="10,0,10,10">
+                  Margin="12,0,12,12">
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition Height="10" />
-                    <RowDefinition Height="70" />
+                    <RowDefinition Height="75" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="245" />
@@ -145,10 +145,12 @@
                                  HorizontalContentAlignment="Stretch"
                                  VerticalAlignment="Stretch"
                                  Margin="0,20,0,0"
+                                 SelectedItem="{Binding SelectedTrack}"
                                  Background="Transparent"
+                                 ItemContainerStyle="{StaticResource TrackListBoxItemStyle}"
                                  BorderThickness="0">
 
-                            <ListBoxItem>
+                            <ListBoxItem >
                                 <DockPanel LastChildFill="True">
                                     <Border Height="1"
                                             BorderBrush="#A2A2AD"
@@ -386,16 +388,8 @@
                     </Grid>
                 </Border>
 
-                <Border Grid.ColumnSpan="3"
-                        Grid.Row="2">
-                    <Border.Background>
-                        <SolidColorBrush Color="White"
-                                         Opacity="0.65" />
-                    </Border.Background>
-
-                    <!--<ScrollBar Style="{DynamicResource ScrollBarStyle}"></ScrollBar>-->
-                </Border>
-
+                <sectionControls:SoundBar Grid.ColumnSpan="3"
+                                          Grid.Row="2" />
             </Grid>
         </Grid>
     </Border>

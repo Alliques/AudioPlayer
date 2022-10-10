@@ -11,8 +11,8 @@ namespace Walkman.UI.Controls.CustomControls
         private IScrollInfo _child;
         private double _computedVerticalOffset = 0;
         private double _computedHorizontalOffset = 0;
-        internal const double _scrollLineDelta = 16.0;
-        internal const double _mouseWheelDelta = 48.0;
+        internal const double _scrollLineDelta = 50.0;
+        internal const double _mouseWheelDelta = 50.0;
 
         public ScrollInfoAdapter(IScrollInfo child)
         {

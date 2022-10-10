@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	
+	<Color x:Key="App.PrimaryControl">#A2A2AD</Color>
+	<SolidColorBrush x:Key="App.PrimaryControlBrush" Color="{StaticResource App.PrimaryControl}" />
+	
+	<Color x:Key="App.SecondaryControl">#6682DB</Color>
+	<SolidColorBrush x:Key="App.SecondaryControlBrush" Color="{StaticResource App.SecondaryControl}" />
+
+</ResourceDictionary>
