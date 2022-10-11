@@ -6,109 +6,75 @@
              xmlns:local="clr-namespace:Walkman.UI.Controls"
              mc:Ignorable="d"
              xmlns:container="clr-namespace:Walkman.UI.Controls"
-             xmlns:customcontrols="clr-namespace:Walkman.UI.Controls.CustomControls"
+             xmlns:customcontrols="clr-namespace:Walkman.Wpf.CustomControls.Controls;assembly=Walkman.Wpf.CustomControls"
              d:DesignHeight="450"
              d:DesignWidth="273.606">
+    <UserControl.Resources>
+        <Style x:Key="MenuItemStyle"
+               TargetType="{x:Type customcontrols:CustomizableButton}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="IconHeight"
+                    Value="12" />
+            <Setter Property="IconWidth"
+                    Value="12" />
+            <Setter Property="HorizontalAlignment" 
+                    Value="Left"/>
+            <Setter Property="TextContentFontWeight"
+                    Value="Medium" />
+            <Setter Property="TextContentMargin"
+                    Value="5,0,0,0" />
+            <Setter Property="Margin"
+                    Value="0,7" />
+            <Setter Property="Height"
+                    Value="18" />
+        </Style>
+        
+    </UserControl.Resources>
     <Border Style="{StaticResource TransparentBorder}">
         <Border.Background>
-            <SolidColorBrush Color="White" Opacity="0.65"/>
+            <SolidColorBrush Color="White"
+                             Opacity="0.65" />
         </Border.Background>
         <Grid>
             <StackPanel>
-                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
-                        Height="18"
-                        Margin="0,7,0,7">
-                    <StackPanel Orientation="Horizontal">
-                        <ContentPresenter Height="12"
-                                          ContentTemplate="{StaticResource Gear}" />
-                        <TextBlock Text="Settings"
-                                   FontWeight="Medium"
-                                   Margin="5,0,0,0"
-                                   VerticalAlignment="Center" />
-                    </StackPanel>
-                </customcontrols:CustomizableButton>
-                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
-                        Margin="0,7,0,7"
-                        Height="18">
-                    <StackPanel Orientation="Horizontal">
-                        <ContentPresenter Height="12"
-                                          ContentTemplate="{StaticResource Home}" />
-                        <TextBlock Text="Home"
-                                   FontWeight="Medium"
-                                   Margin="5,0,0,0"
-                                   VerticalAlignment="Center" />
-                    </StackPanel>
-                </customcontrols:CustomizableButton>
-                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
-                        Margin="0,7,0,7"
-                        Height="18">
-                    <StackPanel Orientation="Horizontal">
-                        <ContentPresenter Height="12"
-                                          ContentTemplate="{StaticResource Search}" />
-                        <TextBlock Text="Search"
-                                   FontWeight="Medium"
-                                   Margin="5,0,0,0"
-                                   VerticalAlignment="Center" />
-                    </StackPanel>
-                </customcontrols:CustomizableButton>
-                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
-                        Margin="0,7,0,7"
-                        Height="18">
-                    <StackPanel Orientation="Horizontal">
-                        <ContentPresenter Height="12"
-                                          ContentTemplate="{StaticResource Radio}" />
-                        <TextBlock Text="Radio"
-                                   FontWeight="Medium"
-                                   Margin="5,0,0,0"
-                                   VerticalAlignment="Center" />
-                    </StackPanel>
-                </customcontrols:CustomizableButton>
+                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                                                   TextContent="Setting"
+                                                   IconHeight="10"
+                                                   IconWidth="10"
+                                                   IconContent="{StaticResource Gear}" />
+
+                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                                                   TextContent="Home"
+                                                   IconContent="{StaticResource Home}" />
+
+                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                                                   TextContent="Search"
+                                                   IconContent="{StaticResource Search}"/>
+
+                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                                                   TextContent="Radio"
+                                                   IconContent="{StaticResource Radio}" />
+
                 <Label  Content="Playlists"
                         Margin="0,15,0,5"
                         Padding="0"
                         Foreground="#878787"
                         FontSize="16" />
 
-                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
-                        Margin="0,7,0,7"
-                        Height="18">
-                    <StackPanel Orientation="Horizontal">
-                        <ContentPresenter Height="12"
-                                          ContentTemplate="{StaticResource MusicNote}" />
-                        <TextBlock Text="Rock"
-                                   FontWeight="Medium"
-                                   Margin="5,0,0,0"
-                                   VerticalAlignment="Center" />
-                    </StackPanel>
-                </customcontrols:CustomizableButton>
-                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
-                        Margin="0,7,0,7"
-                        Height="18">
-                    <StackPanel Orientation="Horizontal">
-                        <ContentPresenter Height="12"
-                                          ContentTemplate="{StaticResource MusicNote}" />
-                        <TextBlock Text="Chill"
-                                   FontWeight="Medium"
-                                   Margin="5,0,0,0"
-                                   VerticalAlignment="Center" />
-                    </StackPanel>
-                </customcontrols:CustomizableButton>
-                <customcontrols:CustomizableButton HorizontalContentAlignment="Left"
-                        Margin="0,7,0,7"
-                        Height="18">
-                    <StackPanel Orientation="Horizontal">
-                        <ContentPresenter Height="12"
-                                          ContentTemplate="{StaticResource MusicNote}" />
-                        <TextBlock Text="Pop"
-                                   FontWeight="Medium"
-                                   Margin="5,0,0,0"
-                                   VerticalAlignment="Center" />
-                    </StackPanel>
-                </customcontrols:CustomizableButton>
+                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                                                   TextContent="Rock"
+                                                   IconContent="{StaticResource MusicNote}" />
+                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                                                   TextContent="Chill"
+                                                   IconContent="{StaticResource MusicNote}" />
+
+                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                                                   TextContent="Pop"
+                                                   IconContent="{StaticResource MusicNote}"/>
             </StackPanel>
             <customcontrols:CustomizableButton VerticalAlignment="Bottom"
                                                CornerRadius="12"
-                                               Content="+ Add"
+                                               TextContent="asdas"
                                                Width="70"
                                                Opacity="1"
                                                Height="30"

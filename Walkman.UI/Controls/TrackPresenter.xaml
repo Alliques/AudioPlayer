@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Walkman.UI.Controls"
              xmlns:customcontrols="clr-namespace:Walkman.UI.Controls.CustomControls"
+             xmlns:customcontrolslib="clr-namespace:Walkman.Wpf.CustomControls.Controls;assembly=Walkman.Wpf.CustomControls"
              mc:Ignorable="d"
              MaxHeight="175"
              MinHeight="175"
@@ -65,16 +66,19 @@
                 </Grid>
                 <StackPanel Grid.Row="2"
                             Orientation="Horizontal" VerticalAlignment="Bottom">
-                    <customcontrols:CustomizableButton Height="30">
-                        <ContentPresenter  ContentTemplate="{StaticResource PlayCircle}" />
-                    </customcontrols:CustomizableButton>
-                    <customcontrols:CustomizableButton Height="25"
-                                                       Margin="20,0">
-                        <ContentPresenter  ContentTemplate="{StaticResource Heart}" />
-                    </customcontrols:CustomizableButton>
-                    <customcontrols:CustomizableButton Height="18">
-                        <ContentPresenter  ContentTemplate="{StaticResource AddToPlaylist}" />
-                    </customcontrols:CustomizableButton>
+                    <customcontrolslib:CustomizableButton IconHeight="30"
+                                                          IconWidth="30"
+                                                          IconContent="{StaticResource PlayCircle}" />
+
+                    <customcontrolslib:CustomizableButton IconHeight="30"
+                                                          IconWidth="30"
+                                                          IconContent="{StaticResource Heart}"
+                                                          Margin="20,0" />
+
+                    <customcontrolslib:CustomizableButton IconContent="{StaticResource AddToPlaylist}"
+                                                          IconHeight="30"
+                                                          IconWidth="30" />
+
                 </StackPanel>
             </Grid>
         </Border>

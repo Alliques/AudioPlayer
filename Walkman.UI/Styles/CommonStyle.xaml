@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:customcontrols="clr-namespace:Walkman.UI.Controls.CustomControls"
+                    xmlns:customcontrolslib="clr-namespace:Walkman.Wpf.CustomControls.Controls;assembly=Walkman.Wpf.CustomControls"
                     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
                     xmlns:b="clr-namespace:Walkman.UI.Behavors">
     <Style x:Key="TransparentBorder"
@@ -14,11 +15,11 @@
                 Value="25" />
     </Style>
 
-    <Style x:Key="noChrome"
-           TargetType="{x:Type customcontrols:CustomizableButton}">
+    <!--<Style x:Key="noChrome"
+           TargetType="{x:Type customcontrolslib:CustomizableButton}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type customcontrols:CustomizableButton}">
+                <ControlTemplate TargetType="{x:Type customcontrolslib:CustomizableButton}">
                     <Grid Background="{TemplateBinding Background}">
                         <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center" />
@@ -26,9 +27,9 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
 
-    <Style BasedOn="{StaticResource noChrome}"
+    <!--<Style  
            TargetType="{x:Type customcontrols:CustomizableButton}">
         <Setter Property="Background"
                 Value="Transparent" />
@@ -46,17 +47,26 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}">
-                        <ContentPresenter x:Name="contentPresenter"
-                                          Margin="{TemplateBinding Padding}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Content="{TemplateBinding Content}"
-                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
+                        <DockPanel  HorizontalAlignment="Stretch">
+                            <ContentPresenter x:Name="contentPresenter"
+                                              Width="{TemplateBinding IconWidth}"
+                                              Height="{TemplateBinding IconHeight}"
+                                              Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Content="{TemplateBinding Content}"
+                                              ContentTemplate="{TemplateBinding IconContent}" />
+                            <TextBlock HorizontalAlignment="{TemplateBinding HorizontalTextAlignment}"
+                                       VerticalAlignment="Center"
+                                       FontWeight="{TemplateBinding TextContentFontWeight}"
+                                       Margin="{TemplateBinding TextContentMargin}"
+                                       Text="{TemplateBinding TextContent}" />
+                        </DockPanel>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
 
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
@@ -102,7 +112,7 @@
                      Color="#F0F0F0" />
     <SolidColorBrush x:Key="ScrollBar.Disabled.Glyph"
                      Color="#BFBFBF" />
- 
+
     <Style x:Key="ScrollBarThumbVertical"
            TargetType="{x:Type Thumb}">
         <Setter Property="OverridesDefaultStyle"
@@ -410,7 +420,7 @@
                                    HorizontalAlignment="Right"
                                    Margin="20,0,25,0"
                                    DockPanel.Dock="Right" />
-                        <customcontrols:CustomizableButton Height="15"
+                        <customcontrolslib:CustomizableButton Height="15"
                                                            Width="15"
                                                            Padding="0,2,0,0"
                                                            HorizontalAlignment="Right"
@@ -426,7 +436,7 @@
                   -21.296c19.431,0 37.702,7.557 51.438,21.296l21.305,21.312c6.107,6.098 16.897,6.098 23.003,0l21.297,-21.312c13.737,
                   -13.739 32.009,-21.296 51.446,-21.296c19.431,0 37.701,7.557 51.438,21.296c28.371,28.379 28.371,74.528 0,102.893z" />
                             </Viewbox>
-                        </customcontrols:CustomizableButton>
+                        </customcontrolslib:CustomizableButton>
                     </DockPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver"
@@ -485,6 +495,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-    
+
+
 </ResourceDictionary>

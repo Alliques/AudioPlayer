@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Walkman.UI.Controls.CustomControls
+namespace Walkman.Wpf.CustomControls.Controls
 {
     public class CustomizableButton : Button
     {

@@ -16,6 +16,7 @@
         ResizeMode="CanResizeWithGrip"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:b="clr-namespace:Walkman.UI.Behavors"
+        xmlns:customcontrolslib="clr-namespace:Walkman.Wpf.CustomControls.Controls;assembly=Walkman.Wpf.CustomControls"
         MinWidth="300"
         MinHeight="500"
         WindowStyle="None">
@@ -171,12 +172,12 @@
                                                HorizontalAlignment="Right"
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
-                                    <customcontrols:CustomizableButton Height="12"
+                                    <customcontrolslib:CustomizableButton Height="12"
                                                                        Width="12"
                                                                        HorizontalAlignment="Right"
                                                                        DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrols:CustomizableButton>
+                                    </customcontrolslib:CustomizableButton>
                                 </DockPanel>
                             </ListBoxItem>
                             <ListBoxItem>
@@ -200,12 +201,12 @@
                                                HorizontalAlignment="Right"
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
-                                    <customcontrols:CustomizableButton Height="12"
+                                    <customcontrolslib:CustomizableButton Height="12"
                                                                        Width="12"
                                                                        HorizontalAlignment="Right"
                                                                        DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrols:CustomizableButton>
+                                    </customcontrolslib:CustomizableButton>
                                 </DockPanel>
                             </ListBoxItem>
                             <ListBoxItem>
@@ -229,12 +230,12 @@
                                                HorizontalAlignment="Right"
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
-                                    <customcontrols:CustomizableButton Height="12"
-                                                                       Width="12"
-                                                                       HorizontalAlignment="Right"
-                                                                       DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrols:CustomizableButton>
+                                    <customcontrolslib:CustomizableButton IconWidth="12"
+                                                                          IconHeight="12"
+                                                                          IconContent="{StaticResource Heart}"
+                                                                          HorizontalAlignment="Right"
+                                                                          DockPanel.Dock="Right" />
+
                                 </DockPanel>
                             </ListBoxItem>
                             <ListBoxItem>
@@ -258,12 +259,12 @@
                                                HorizontalAlignment="Right"
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
-                                    <customcontrols:CustomizableButton Height="12"
+                                    <customcontrolslib:CustomizableButton Height="12"
                                                                        Width="12"
                                                                        HorizontalAlignment="Right"
                                                                        DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrols:CustomizableButton>
+                                    </customcontrolslib:CustomizableButton>
                                 </DockPanel>
                             </ListBoxItem>
                             <ListBoxItem>
@@ -287,12 +288,12 @@
                                                HorizontalAlignment="Right"
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
-                                    <customcontrols:CustomizableButton Height="12"
+                                    <customcontrolslib:CustomizableButton Height="12"
                                                                        Width="12"
                                                                        HorizontalAlignment="Right"
                                                                        DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrols:CustomizableButton>
+                                    </customcontrolslib:CustomizableButton>
                                 </DockPanel>
                             </ListBoxItem>
                             <ListBoxItem>
@@ -316,12 +317,12 @@
                                                HorizontalAlignment="Right"
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
-                                    <customcontrols:CustomizableButton Height="12"
+                                    <customcontrolslib:CustomizableButton Height="12"
                                                                        Width="12"
                                                                        HorizontalAlignment="Right"
                                                                        DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrols:CustomizableButton>
+                                    </customcontrolslib:CustomizableButton>
                                 </DockPanel>
                             </ListBoxItem>
                             <ListBoxItem>
@@ -345,12 +346,12 @@
                                                HorizontalAlignment="Right"
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
-                                    <customcontrols:CustomizableButton Height="12"
+                                    <customcontrolslib:CustomizableButton Height="12"
                                                                        Width="12"
                                                                        HorizontalAlignment="Right"
                                                                        DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrols:CustomizableButton>
+                                    </customcontrolslib:CustomizableButton>
                                 </DockPanel>
                             </ListBoxItem>
                             <ListBoxItem>
@@ -374,12 +375,12 @@
                                                HorizontalAlignment="Right"
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
-                                    <customcontrols:CustomizableButton Height="12"
+                                    <customcontrolslib:CustomizableButton Height="12"
                                                                        Width="12"
                                                                        HorizontalAlignment="Right"
                                                                        DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrols:CustomizableButton>
+                                    </customcontrolslib:CustomizableButton>
                                 </DockPanel>
                             </ListBoxItem>
                         </ListBox>

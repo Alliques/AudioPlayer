@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Walkman.UI.Controls"
-             xmlns:customcontrols="clr-namespace:Walkman.UI.Controls.CustomControls"
+             xmlns:customcontrols="clr-namespace:Walkman.Wpf.CustomControls.Controls;assembly=Walkman.Wpf.CustomControls"
              mc:Ignorable="d"
              MaxHeight="75"
              MinHeight="75"
@@ -71,29 +71,34 @@
                            VerticalAlignment="Bottom" />
                 <customcontrols:CustomizableButton Grid.Column="1"
                                                    HorizontalAlignment="Right"
-                                                   Height="12">
-                    <ContentPresenter  ContentTemplate="{StaticResource Shuffle}" />
-                </customcontrols:CustomizableButton>
+                                                   IconWidth="12"
+                                                   IconHeight="12"
+                                                   IconContent="{StaticResource Shuffle}" />
+                
                 <customcontrols:CustomizableButton Grid.Column="2"
+                                                   IconWidth="16"
+                                                   IconHeight="16"
                                                    HorizontalAlignment="Right"
-                                                   Height="18">
-                    <ContentPresenter  ContentTemplate="{StaticResource PreviousTrack}" />
-                </customcontrols:CustomizableButton>
+                                                   IconContent="{StaticResource PreviousTrack}" />
+                
                 <customcontrols:CustomizableButton Grid.Column="3"
+                                                   IconWidth="25"
+                                                   IconHeight="25"
                                                    HorizontalAlignment="Center"
-                                                   Height="30">
-                    <ContentPresenter  ContentTemplate="{StaticResource Play}" />
-                </customcontrols:CustomizableButton>
+                                                   IconContent="{StaticResource Play}" />
+
                 <customcontrols:CustomizableButton Grid.Column="4"
                                                    HorizontalAlignment="Left"
-                                                   Height="18">
-                    <ContentPresenter  ContentTemplate="{StaticResource NextTrack}" />
-                </customcontrols:CustomizableButton>
+                                                   IconWidth="16"
+                                                   IconHeight="16"
+                                                   IconContent="{StaticResource NextTrack}" />
+
                 <customcontrols:CustomizableButton Grid.Column="5"
                                                    HorizontalAlignment="Left"
-                                                   Height="15">
-                    <ContentPresenter  ContentTemplate="{StaticResource Repeat}" />
-                </customcontrols:CustomizableButton>
+                                                   IconWidth="14"
+                                                   IconHeight="14"
+                                                   IconContent="{StaticResource Repeat}"/>
+
                 <TextBlock Grid.Column="7"
                            Text="{Binding TotalTrackLength, FallbackValue='5:49'}"
                            VerticalAlignment="Bottom" />
