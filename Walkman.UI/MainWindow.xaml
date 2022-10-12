@@ -37,75 +37,23 @@
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right">
-                <Button x:Name="btnMinimize"
-                        BorderThickness="0"
-                        Content="-"
-                        Foreground="White"
-                        FontSize="15"
-                        FontFamily="Monserrat"
-                        Cursor="Hand"
-                        Grid.Column="1"
-                        Click="btnMinimize_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Background"
-                                    Value="#28AEED" />
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver"
-                                         Value="True">
-                                    <Setter Property="Background"
-                                            Value="#28AEED" />
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Width="14"
-                                    Height="14"
-                                    CornerRadius="7"
-                                    Background="{TemplateBinding Background}">
-                                <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center" />
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button x:Name="btnClose"
-                        Margin="10,0,15,0"
-                        BorderThickness="0"
-                        Content="x"
-                        Foreground="White"
-                        FontSize="10"
-                        FontFamily="Monserrat"
-                        Cursor="Hand"
-                        Grid.Column="2"
-                        Click="btnClose_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Background"
-                                    Value="#DA34AE" />
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver"
-                                         Value="True">
-                                    <Setter Property="Background"
-                                            Value="#28AEED" />
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border  Width="14"
-                                     Height="14"
-                                     CornerRadius="7"
-                                     Background="{TemplateBinding Background}">
-                                <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center" />
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+                <customcontrolslib:CustomizableButton x:Name="btnMinimize"
+                                                      Cursor="Hand"
+                                                      Grid.Column="1"
+                                                      IconHeight="10"
+                                                      IconWidth="10"
+                                                      IconContent="{StaticResource MinimizeWindow}"
+                                                      Click="btnMinimize_Click">
+                </customcontrolslib:CustomizableButton>
+                <customcontrolslib:CustomizableButton x:Name="btnClose"
+                                                      Margin="10,0,15,0"
+                                                      Cursor="Hand"
+                                                      IconHeight="10"
+                                                      IconWidth="10"
+                                                      IconContent="{StaticResource CloseWindow}"
+                                                      Grid.Column="2"
+                                                      Click="btnClose_Click">
+                </customcontrolslib:CustomizableButton>
             </StackPanel>
             <Grid Grid.Row="1"
                   Margin="12,0,12,12">
@@ -131,15 +79,7 @@
                             <RowDefinition Height="auto" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <sectionControls:TrackPresenter Height="150" />
-
-                        <!--<ListBox Style="{StaticResource SmoothListBox}"
-                                 ItemsSource="{Binding TrackList}"
-                                 HorizontalContentAlignment="Stretch"
-                                 VerticalAlignment="Stretch"
-                                 Margin="0,20,0,0"
-                                 Background="Transparent"
-                                 BorderThickness="0"/>-->
+                        <sectionControls:TrackPresenter Height="150"/>
 
                         <ListBox Grid.Row="1"
                                  Style="{StaticResource SmoothListBox}"
@@ -173,9 +113,9 @@
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
                                     <customcontrolslib:CustomizableButton Height="12"
-                                                                       Width="12"
-                                                                       HorizontalAlignment="Right"
-                                                                       DockPanel.Dock="Right">
+                                                                          Width="12"
+                                                                          HorizontalAlignment="Right"
+                                                                          DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
                                     </customcontrolslib:CustomizableButton>
                                 </DockPanel>
@@ -202,9 +142,9 @@
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
                                     <customcontrolslib:CustomizableButton Height="12"
-                                                                       Width="12"
-                                                                       HorizontalAlignment="Right"
-                                                                       DockPanel.Dock="Right">
+                                                                          Width="12"
+                                                                          HorizontalAlignment="Right"
+                                                                          DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
                                     </customcontrolslib:CustomizableButton>
                                 </DockPanel>
@@ -260,9 +200,9 @@
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
                                     <customcontrolslib:CustomizableButton Height="12"
-                                                                       Width="12"
-                                                                       HorizontalAlignment="Right"
-                                                                       DockPanel.Dock="Right">
+                                                                          Width="12"
+                                                                          HorizontalAlignment="Right"
+                                                                          DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
                                     </customcontrolslib:CustomizableButton>
                                 </DockPanel>
@@ -289,9 +229,9 @@
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
                                     <customcontrolslib:CustomizableButton Height="12"
-                                                                       Width="12"
-                                                                       HorizontalAlignment="Right"
-                                                                       DockPanel.Dock="Right">
+                                                                          Width="12"
+                                                                          HorizontalAlignment="Right"
+                                                                          DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
                                     </customcontrolslib:CustomizableButton>
                                 </DockPanel>
@@ -318,9 +258,9 @@
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
                                     <customcontrolslib:CustomizableButton Height="12"
-                                                                       Width="12"
-                                                                       HorizontalAlignment="Right"
-                                                                       DockPanel.Dock="Right">
+                                                                          Width="12"
+                                                                          HorizontalAlignment="Right"
+                                                                          DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
                                     </customcontrolslib:CustomizableButton>
                                 </DockPanel>
@@ -347,9 +287,9 @@
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
                                     <customcontrolslib:CustomizableButton Height="12"
-                                                                       Width="12"
-                                                                       HorizontalAlignment="Right"
-                                                                       DockPanel.Dock="Right">
+                                                                          Width="12"
+                                                                          HorizontalAlignment="Right"
+                                                                          DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
                                     </customcontrolslib:CustomizableButton>
                                 </DockPanel>
@@ -376,9 +316,9 @@
                                                Margin="25,0"
                                                DockPanel.Dock="Right" />
                                     <customcontrolslib:CustomizableButton Height="12"
-                                                                       Width="12"
-                                                                       HorizontalAlignment="Right"
-                                                                       DockPanel.Dock="Right">
+                                                                          Width="12"
+                                                                          HorizontalAlignment="Right"
+                                                                          DockPanel.Dock="Right">
                                         <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
                                     </customcontrolslib:CustomizableButton>
                                 </DockPanel>

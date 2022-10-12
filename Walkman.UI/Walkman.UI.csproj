@@ -13,6 +13,76 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Fonts\Nunito-Black.ttf" />
+    <None Remove="Resources\Fonts\Nunito-BlackItalic.ttf" />
+    <None Remove="Resources\Fonts\Nunito-Bold.ttf" />
+    <None Remove="Resources\Fonts\Nunito-BoldItalic.ttf" />
+    <None Remove="Resources\Fonts\Nunito-ExtraBold.ttf" />
+    <None Remove="Resources\Fonts\Nunito-ExtraBoldItalic.ttf" />
+    <None Remove="Resources\Fonts\Nunito-ExtraLight.ttf" />
+    <None Remove="Resources\Fonts\Nunito-ExtraLightItalic.ttf" />
+    <None Remove="Resources\Fonts\Nunito-Italic.ttf" />
+    <None Remove="Resources\Fonts\Nunito-Light.ttf" />
+    <None Remove="Resources\Fonts\Nunito-LightItalic.ttf" />
+    <None Remove="Resources\Fonts\Nunito-Medium.ttf" />
+    <None Remove="Resources\Fonts\Nunito-MediumItalic.ttf" />
+    <None Remove="Resources\Fonts\Nunito-Regular.ttf" />
+    <None Remove="Resources\Fonts\Nunito-SemiBold.ttf" />
+    <None Remove="Resources\Fonts\Nunito-SemiBoldItalic.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\Nunito-Black.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-BlackItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-BoldItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-ExtraBold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-ExtraBoldItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-ExtraLight.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-ExtraLightItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-Italic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-Light.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-LightItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-Medium.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-MediumItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-SemiBold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nunito-SemiBoldItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Fody" Version="6.6.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
