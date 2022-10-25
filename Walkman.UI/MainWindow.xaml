@@ -12,14 +12,17 @@
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
         xmlns:sectionControls="clr-namespace:Walkman.UI.Controls"
-        xmlns:customcontrols="clr-namespace:Walkman.UI.Controls.CustomControls"
+        xmlns:converters="clr-namespace:Walkman.UI.Converter"
         ResizeMode="CanResizeWithGrip"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:b="clr-namespace:Walkman.UI.Behavors"
         xmlns:customcontrolslib="clr-namespace:Walkman.Wpf.CustomControls.Controls;assembly=Walkman.Wpf.CustomControls"
-        MinWidth="300"
+        MinWidth="320"
         MinHeight="500"
         WindowStyle="None">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+    </Window.Resources>
     <Border MouseDown="Border_MouseDown">
         <Border.Background>
             <LinearGradientBrush StartPoint="0,0"
@@ -35,6 +38,8 @@
                 <RowDefinition Height="25" />
                 <RowDefinition />
             </Grid.RowDefinitions>
+
+          
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right">
                 <customcontrolslib:CustomizableButton x:Name="btnMinimize"
@@ -55,548 +60,305 @@
                                                       Click="btnClose_Click">
                 </customcontrolslib:CustomizableButton>
             </StackPanel>
-            <!--<Grid Grid.Row="1"
-                  Margin="12,0,12,12">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition Height="10" />
-                    <RowDefinition Height="75" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="245" />
-                    <ColumnDefinition Width="10" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <sectionControls:SideMenu />
-                <Border Grid.Column="2"
-                        Style="{StaticResource TransparentBorder}">
-                    <Border.Background>
-                        <SolidColorBrush Color="White"
-                                         Opacity="0.65" />
-                    </Border.Background>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <sectionControls:TrackPresenter Height="150"/>
-
-                        <ListBox Grid.Row="1"
-                                 Style="{StaticResource SmoothListBox}"
-                                 HorizontalContentAlignment="Stretch"
-                                 VerticalAlignment="Stretch"
-                                 Margin="0,20,0,0"
-                                 SelectedItem="{Binding SelectedTrack}"
-                                 Background="Transparent"
-                                 ItemContainerStyle="{StaticResource TrackListBoxItemStyle}"
-                                 BorderThickness="0">
-
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton IconWidth="12"
-                                                                          IconHeight="12"
-                                                                          IconContent="{StaticResource Heart}"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right" />
-
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                        </ListBox>
-
-
-                    </Grid>
-                </Border>
-
-                <sectionControls:SoundBar Grid.ColumnSpan="3"
-                                          Grid.Row="2" />
-            </Grid>-->
             <DockPanel Grid.Row="1"
-                       Margin="12,0,12,12" LastChildFill="True">
+                       Margin="12,0,12,12"
+                       LastChildFill="True">
                 <sectionControls:SoundBar DockPanel.Dock="Bottom"
                                           Margin="0,10,0,0" />
                 <sectionControls:SideMenu DockPanel.Dock="Left"
                                           Margin="0,0,10,0"
                                           Width="245"
-                                          MaxWidth="245" />
+                                          MaxWidth="245">
+                    <sectionControls:SideMenu.Style>
+                        <Style TargetType="sectionControls:SideMenu">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=Window}, Converter={x:Static converters:InLessThanConverter.Instance}, ConverterParameter=730}"
+                                             Value="true">
+                                    <DataTrigger.Setters>
+                                        <Setter Property="Visibility"
+                                                Value="Collapsed" />
+                                    </DataTrigger.Setters>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </sectionControls:SideMenu.Style>
+                </sectionControls:SideMenu>
                 <Border Style="{StaticResource TransparentBorder}">
                     <Border.Background>
                         <SolidColorBrush Color="White"
                                          Opacity="0.65" />
                     </Border.Background>
                     <Grid>
-                        <Grid.RowDefinitions>
+                        <DockPanel>
+                            <!--<Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
                             <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <sectionControls:TrackPresenter Height="150" />
+                        </Grid.RowDefinitions>-->
 
-                        <ListBox Grid.Row="1"
-                                 Style="{StaticResource SmoothListBox}"
-                                 HorizontalContentAlignment="Stretch"
-                                 VerticalAlignment="Stretch"
-                                 Margin="0,20,0,0"
-                                 SelectedItem="{Binding SelectedTrack}"
-                                 Background="Transparent"
-                                 ItemContainerStyle="{StaticResource TrackListBoxItemStyle}"
-                                 BorderThickness="0">
+                            <ContentControl DockPanel.Dock="Top" >
+                                <ContentControl.Style>
+                                    <Style TargetType="ContentControl">
+                                        <Setter Property="ContentTemplate" Value="{StaticResource TrackPresenter}"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=Window}, Converter={x:Static converters:InLessThanConverter.Instance}, ConverterParameter=400}"
+                                                         Value="true">
+                                                <DataTrigger.Setters>
+                                                    <Setter Property="ContentTemplate"
+                                                            Value="{StaticResource TrackPresenterCompact}" />
+                                                </DataTrigger.Setters>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ContentControl.Style>
+                            </ContentControl>
 
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton IconWidth="12"
-                                                                          IconHeight="12"
-                                                                          IconContent="{StaticResource Heart}"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right" />
+                            <Grid>
+                                <ListBox Style="{StaticResource SmoothListBox}"
+                                         VerticalContentAlignment="Stretch"
+                                         HorizontalContentAlignment="Stretch"
+                                         VerticalAlignment="Stretch"
+                                         Margin="0,20,0,0"
+                                         SelectedItem="{Binding SelectedTrack}"
+                                         Background="Transparent"
+                                         ItemContainerStyle="{StaticResource TrackListBoxItemStyle}"
+                                         BorderThickness="0">
 
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                <DockPanel LastChildFill="True">
-                                    <Border Height="1"
-                                            BorderBrush="#A2A2AD"
-                                            BorderThickness="1"
-                                            DockPanel.Dock="Bottom" />
-                                    <Label DockPanel.Dock="Left"
-                                           VerticalContentAlignment="Center"
-                                           Margin="10,10,20,10"
-                                           Content="{Binding Path=Number, FallbackValue=1.}" />
-                                    <StackPanel DockPanel.Dock="Left"
-                                                VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
-                                        <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
-                                                   FontSize="9" />
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Right"
-                                               Margin="25,0"
-                                               DockPanel.Dock="Right" />
-                                    <customcontrolslib:CustomizableButton Height="12"
-                                                                          Width="12"
-                                                                          HorizontalAlignment="Right"
-                                                                          DockPanel.Dock="Right">
-                                        <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
-                                    </customcontrolslib:CustomizableButton>
-                                </DockPanel>
-                            </ListBoxItem>
-                        </ListBox>
+                                    <ListBoxItem>
+                                    <DockPanel LastChildFill="True">
+                                        <Border Height="1"
+                                                BorderBrush="#A2A2AD"
+                                                BorderThickness="1"
+                                                DockPanel.Dock="Bottom" />
+                                        <Label DockPanel.Dock="Left"
+                                               VerticalContentAlignment="Center"
+                                               Margin="10,10,20,10"
+                                               Content="{Binding Path=Number, FallbackValue=1.}" />
+                                        <StackPanel DockPanel.Dock="Left"
+                                                    VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
+                                            <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
+                                                       FontSize="9" />
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Right"
+                                                   Margin="25,0"
+                                                   DockPanel.Dock="Right" />
+                                        <customcontrolslib:CustomizableButton Height="12"
+                                                                              Width="12"
+                                                                              HorizontalAlignment="Right"
+                                                                              DockPanel.Dock="Right">
+                                            <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
+                                        </customcontrolslib:CustomizableButton>
+                                    </DockPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <DockPanel LastChildFill="True">
+                                        <Border Height="1"
+                                                BorderBrush="#A2A2AD"
+                                                BorderThickness="1"
+                                                DockPanel.Dock="Bottom" />
+                                        <Label DockPanel.Dock="Left"
+                                               VerticalContentAlignment="Center"
+                                               Margin="10,10,20,10"
+                                               Content="{Binding Path=Number, FallbackValue=1.}" />
+                                        <StackPanel DockPanel.Dock="Left"
+                                                    VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
+                                            <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
+                                                       FontSize="9" />
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Right"
+                                                   Margin="25,0"
+                                                   DockPanel.Dock="Right" />
+                                        <customcontrolslib:CustomizableButton Height="12"
+                                                                              Width="12"
+                                                                              HorizontalAlignment="Right"
+                                                                              DockPanel.Dock="Right">
+                                            <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
+                                        </customcontrolslib:CustomizableButton>
+                                    </DockPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <DockPanel LastChildFill="True">
+                                        <Border Height="1"
+                                                BorderBrush="#A2A2AD"
+                                                BorderThickness="1"
+                                                DockPanel.Dock="Bottom" />
+                                        <Label DockPanel.Dock="Left"
+                                               VerticalContentAlignment="Center"
+                                               Margin="10,10,20,10"
+                                               Content="{Binding Path=Number, FallbackValue=1.}" />
+                                        <StackPanel DockPanel.Dock="Left"
+                                                    VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
+                                            <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
+                                                       FontSize="9" />
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Right"
+                                                   Margin="25,0"
+                                                   DockPanel.Dock="Right" />
+                                        <customcontrolslib:CustomizableButton IconWidth="12"
+                                                                              IconHeight="12"
+                                                                              IconContent="{StaticResource Heart}"
+                                                                              HorizontalAlignment="Right"
+                                                                              DockPanel.Dock="Right" />
 
+                                    </DockPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <DockPanel LastChildFill="True">
+                                        <Border Height="1"
+                                                BorderBrush="#A2A2AD"
+                                                BorderThickness="1"
+                                                DockPanel.Dock="Bottom" />
+                                        <Label DockPanel.Dock="Left"
+                                               VerticalContentAlignment="Center"
+                                               Margin="10,10,20,10"
+                                               Content="{Binding Path=Number, FallbackValue=1.}" />
+                                        <StackPanel DockPanel.Dock="Left"
+                                                    VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
+                                            <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
+                                                       FontSize="9" />
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Right"
+                                                   Margin="25,0"
+                                                   DockPanel.Dock="Right" />
+                                        <customcontrolslib:CustomizableButton Height="12"
+                                                                              Width="12"
+                                                                              HorizontalAlignment="Right"
+                                                                              DockPanel.Dock="Right">
+                                            <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
+                                        </customcontrolslib:CustomizableButton>
+                                    </DockPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <DockPanel LastChildFill="True">
+                                        <Border Height="1"
+                                                BorderBrush="#A2A2AD"
+                                                BorderThickness="1"
+                                                DockPanel.Dock="Bottom" />
+                                        <Label DockPanel.Dock="Left"
+                                               VerticalContentAlignment="Center"
+                                               Margin="10,10,20,10"
+                                               Content="{Binding Path=Number, FallbackValue=1.}" />
+                                        <StackPanel DockPanel.Dock="Left"
+                                                    VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
+                                            <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
+                                                       FontSize="9" />
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Right"
+                                                   Margin="25,0"
+                                                   DockPanel.Dock="Right" />
+                                        <customcontrolslib:CustomizableButton Height="12"
+                                                                              Width="12"
+                                                                              HorizontalAlignment="Right"
+                                                                              DockPanel.Dock="Right">
+                                            <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
+                                        </customcontrolslib:CustomizableButton>
+                                    </DockPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <DockPanel LastChildFill="True">
+                                        <Border Height="1"
+                                                BorderBrush="#A2A2AD"
+                                                BorderThickness="1"
+                                                DockPanel.Dock="Bottom" />
+                                        <Label DockPanel.Dock="Left"
+                                               VerticalContentAlignment="Center"
+                                               Margin="10,10,20,10"
+                                               Content="{Binding Path=Number, FallbackValue=1.}" />
+                                        <StackPanel DockPanel.Dock="Left"
+                                                    VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
+                                            <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
+                                                       FontSize="9" />
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Right"
+                                                   Margin="25,0"
+                                                   DockPanel.Dock="Right" />
+                                        <customcontrolslib:CustomizableButton Height="12"
+                                                                              Width="12"
+                                                                              HorizontalAlignment="Right"
+                                                                              DockPanel.Dock="Right">
+                                            <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
+                                        </customcontrolslib:CustomizableButton>
+                                    </DockPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <DockPanel LastChildFill="True">
+                                        <Border Height="1"
+                                                BorderBrush="#A2A2AD"
+                                                BorderThickness="1"
+                                                DockPanel.Dock="Bottom" />
+                                        <Label DockPanel.Dock="Left"
+                                               VerticalContentAlignment="Center"
+                                               Margin="10,10,20,10"
+                                               Content="{Binding Path=Number, FallbackValue=1.}" />
+                                        <StackPanel DockPanel.Dock="Left"
+                                                    VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
+                                            <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
+                                                       FontSize="9" />
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Right"
+                                                   Margin="25,0"
+                                                   DockPanel.Dock="Right" />
+                                        <customcontrolslib:CustomizableButton Height="12"
+                                                                              Width="12"
+                                                                              HorizontalAlignment="Right"
+                                                                              DockPanel.Dock="Right">
+                                            <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
+                                        </customcontrolslib:CustomizableButton>
+                                    </DockPanel>
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <DockPanel LastChildFill="True">
+                                        <Border Height="1"
+                                                BorderBrush="#A2A2AD"
+                                                BorderThickness="1"
+                                                DockPanel.Dock="Bottom" />
+                                        <Label DockPanel.Dock="Left"
+                                               VerticalContentAlignment="Center"
+                                               Margin="10,10,20,10"
+                                               Content="{Binding Path=Number, FallbackValue=1.}" />
+                                        <StackPanel DockPanel.Dock="Left"
+                                                    VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Path=Title, FallbackValue=Floration}" />
+                                            <TextBlock Text="{Binding Path=Artist, FallbackValue=Vacation}"
+                                                       FontSize="9" />
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding Path=Time, FallbackValue=1:15}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Right"
+                                                   Margin="25,0"
+                                                   DockPanel.Dock="Right" />
+                                        <customcontrolslib:CustomizableButton Height="12"
+                                                                              Width="12"
+                                                                              HorizontalAlignment="Right"
+                                                                              DockPanel.Dock="Right">
+                                            <ContentPresenter ContentTemplate="{DynamicResource Heart}" />
+                                        </customcontrolslib:CustomizableButton>
+                                    </DockPanel>
+                                </ListBoxItem>
 
+                                </ListBox>
+                            </Grid>
+                        </DockPanel>
                     </Grid>
                 </Border>
             </DockPanel>

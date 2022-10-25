@@ -1,12 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Input;
 using Walkman.UI.ViewModels.Base;
 
 namespace Walkman.UI.ViewModels
 {
     public class WindowViewModel : ViewModelBase
     {
-        public List<TrackList> TrackList { get; set; } = new List<TrackList> 
-        { 
+        public WindowViewModel()
+        {
+        }
+        public List<TrackList> TrackList { get; set; } = new List<TrackList>
+        {
             null,
             null,
             null,

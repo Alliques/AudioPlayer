@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/Fonts.xaml"/>
+                <ResourceDictionary Source="Styles/Layouts.xaml" />
                 <ResourceDictionary Source="Styles/CommonStyle.xaml"/>
                 <ResourceDictionary Source="Styles/SVGIcons.xaml"/>
                 <ResourceDictionary Source="Styles/SliderStyle.xaml" />

@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Walkman.UI.Controls.TrackPresenterCompact"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:Walkman.UI.Converter"
+             xmlns:customcontrolslib="clr-namespace:Walkman.Wpf.CustomControls.Controls;assembly=Walkman.Wpf.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450"
+             d:DesignWidth="352.392">
+    <Grid>
+        <customcontrolslib:CustomizableButton IconHeight="12" Panel.ZIndex="1"
+                                              HorizontalAlignment="Left"
+                                              Margin="-10,-10,0,0"
+                                              VerticalAlignment="Top"
+                                              IconWidth="12"
+                                              IconContent="{StaticResource HamburgerMenu}"/>
+        <StackPanel TextBlock.TextAlignment="Center">
+            <Border CornerRadius="12"
+                   
+                    Margin="5"
+                    Height="{Binding RelativeSource={RelativeSource Mode=Self}, Path=ActualWidth}"
+                    Background="Gray" />
+            <TextBlock Grid.Row="0"
+                       FontSize="20"
+                       FontWeight="Bold"
+                       Text="{Binding TrackName, FallbackValue='Forever in bloom'}" />
+            <TextBlock Text="{Binding Artist, FallbackValue='Vacations'}"
+                       FontSize="16"
+                       FontWeight="Bold" />
+            <TextBlock Text="{Binding AlbumName, FallbackValue='2020'}"
+                       FontWeight="Medium"
+                       FontSize="16"
+                       Foreground="#4C4C55" />
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=Window}, Converter={x:Static converters:InLessThanConverter.Instance}, ConverterParameter=400}"
+                                     Value="true">
+                            <DataTrigger.Setters>
+                                <Setter Property="Visibility"
+                                        Value="Visible" />
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=Window}, Converter={x:Static converters:InLessThanConverter.Instance}, ConverterParameter=400}"
+                                     Value="false">
+                            <DataTrigger.Setters>
+                                <Setter Property="Visibility"
+                                        Value="Collapsed" />
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+        </StackPanel>
+    </Grid>
+</UserControl>

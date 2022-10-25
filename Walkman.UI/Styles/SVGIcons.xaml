@@ -165,5 +165,14 @@
             </Path>
         </Viewbox>
     </DataTemplate>
+
+    <DataTemplate x:Key="HamburgerMenu">
+        <Viewbox Stretch="Uniform">
+            <Path Fill="Black"
+                  Data="m1,1l0,64l448,0l0,-64l-448,0zm0,128l0,64l448,0l0,-64l-448,0zm0,
+                  128l0,64l448,0l0,-64l-448,0z">
+            </Path>
+        </Viewbox>
+    </DataTemplate>
 </ResourceDictionary>
 
