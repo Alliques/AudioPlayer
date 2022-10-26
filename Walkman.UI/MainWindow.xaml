@@ -21,6 +21,7 @@
         MinHeight="500"
         WindowStyle="None">
     <Window.Resources>
+        
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
     </Window.Resources>
     <Border MouseDown="Border_MouseDown">

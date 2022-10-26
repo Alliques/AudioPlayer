@@ -416,5 +416,23 @@
         </Setter>
     </Style>
 
-
+    <Style x:Key="RegularButtonStyle" BasedOn="{StaticResource RegularButtonAnimation}"
+           TargetType="{x:Type customcontrolslib:CustomizableButton}">
+        <Setter Property="HorizontalContentAlignment"
+                Value="Left" />
+        <Setter Property="IconHeight"
+                Value="12" />
+        <Setter Property="IconWidth"
+                Value="12" />
+        <Setter Property="HorizontalAlignment"
+                Value="Left" />
+        <Setter Property="TextContentFontWeight"
+                Value="Medium" />
+        <Setter Property="TextContentMargin"
+                Value="5,2,0,0" />
+        <Setter Property="Margin"
+                Value="0,7" />
+        <Setter Property="Height"
+                Value="18" />
+    </Style>
 </ResourceDictionary>

@@ -8,4 +8,7 @@
 	<Color x:Key="App.SecondaryControl">#6682DB</Color>
 	<SolidColorBrush x:Key="App.SecondaryControlBrush" Color="{StaticResource App.SecondaryControl}" />
 
+    <Color x:Key="App.SecondaryControlLight">#A1B2E9</Color>
+    <SolidColorBrush x:Key="App.SecondaryControlLightBrush"
+                     Color="{StaticResource App.SecondaryControlLight}" />
 </ResourceDictionary>

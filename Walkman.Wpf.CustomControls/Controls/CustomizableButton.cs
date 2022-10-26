@@ -16,6 +16,17 @@ namespace Walkman.Wpf.CustomControls.Controls
 
 
 
+        public HorizontalAlignment ContentHorisontalAlignment
+        {
+            get { return (HorizontalAlignment)GetValue(ContentHorisontalAlignmentProperty); }
+            set { SetValue(ContentHorisontalAlignmentProperty, value); }
+        }
+
+        public static readonly DependencyProperty ContentHorisontalAlignmentProperty =
+            DependencyProperty.Register("ContentHorisontalAlignment", typeof(HorizontalAlignment), typeof(CustomizableButton), new PropertyMetadata(HorizontalAlignment.Stretch));
+
+
+
         public string TextContent
         {
             get { return (string)GetValue(TextContentProperty); }

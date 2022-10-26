@@ -10,7 +10,11 @@
              xmlns:converters="clr-namespace:Walkman.UI.Converter"
              MinHeight="75"
              d:DesignHeight="450"
+             xmlns:vm="clr-namespace:Walkman.UI.ViewModels"
              d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vm:TrackBarViewModel />
+    </UserControl.DataContext>
     <Border Style="{StaticResource TransparentBorder}"
             Padding="10,12,0,12">
         <Border.Background>
@@ -106,29 +110,41 @@
                            VerticalAlignment="Bottom" />
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
                     <customcontrols:CustomizableButton HorizontalAlignment="Right"
+                                                       Style="{StaticResource RegularButtonAnimation}"
                                                        IconWidth="12"
                                                        IconHeight="12"
+                                                       Width="14"
                                                        IconContent="{StaticResource Shuffle}" />
 
-                    <customcontrols:CustomizableButton Margin="25,0" IconWidth="18"
+                    <customcontrols:CustomizableButton Margin="25,0" 
+                                                       IconWidth="18"
                                                        IconHeight="18"
-                                                       HorizontalAlignment="Right"
+                                                       Width="24"
+                                                       Style="{StaticResource CheckoutTrackButtonAnimation}"
+                                                       ContentHorisontalAlignment="Center"
                                                        IconContent="{StaticResource PreviousTrack}" />
 
                     <customcontrols:CustomizableButton IconWidth="32"
                                                        IconHeight="32"
-                                                       HorizontalAlignment="Center"
-                                                       IconContent="{StaticResource Play}" />
+                                                       Width="40"
+                                                       Style="{StaticResource PlayStopButtonAnimation}"
+                                                       ContentHorisontalAlignment="Center"
+                                                       IconContent="{Binding PlayStopIcon}" />
 
                     <customcontrols:CustomizableButton HorizontalAlignment="Left"
                                                        Margin="25,0"
                                                        IconWidth="18"
                                                        IconHeight="18"
+                                                       Width="24"
+                                                       Style="{StaticResource CheckoutTrackButtonAnimation}"
+                                                       ContentHorisontalAlignment="Center"
                                                        IconContent="{StaticResource NextTrack}" />
 
                     <customcontrols:CustomizableButton HorizontalAlignment="Left"
-                                                       IconWidth="14"
-                                                       IconHeight="14"
+                                                       IconWidth="12"
+                                                       IconHeight="12"
+                                                       Width="14"
+                                                       Style="{StaticResource RegularButtonAnimation}"
                                                        IconContent="{StaticResource Repeat}" />
                 </StackPanel>
                 <TextBlock Grid.Column="3"

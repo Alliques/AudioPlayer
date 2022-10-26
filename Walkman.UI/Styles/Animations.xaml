@@ -1,0 +1,105 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:customcontrols="clr-namespace:Walkman.Wpf.CustomControls.Controls;assembly=Walkman.Wpf.CustomControls">
+    <Style x:Key="PlayStopButtonAnimation"
+           TargetType="customcontrols:CustomizableButton">
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="IconHeight"
+                                             Duration="0:0:0.1"
+                                             To="35" />
+                            <DoubleAnimation Storyboard.TargetProperty="IconWidth"
+                                             Duration="0:0:0.1"
+                                             To="35" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseLeave">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="IconHeight"
+                                             Duration="0:0:0.1"
+                                             To="32" />
+                            <DoubleAnimation Storyboard.TargetProperty="IconWidth"
+                                             Duration="0:0:0.1"
+                                             To="32" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CheckoutTrackButtonAnimation"
+           TargetType="customcontrols:CustomizableButton">
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="IconHeight"
+                                             Duration="0:0:0.1"
+                                             To="20" />
+                            <DoubleAnimation Storyboard.TargetProperty="IconWidth"
+                                             Duration="0:0:0.1"
+                                             To="20" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseLeave">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="IconHeight"
+                                             Duration="0:0:0.1"
+                                             To="18" />
+                            <DoubleAnimation Storyboard.TargetProperty="IconWidth"
+                                             Duration="0:0:0.1"
+                                             To="18" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="RegularButtonAnimation"
+           TargetType="customcontrols:CustomizableButton">
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="IconHeight"
+                                             Duration="0:0:0.1"
+                                             To="14" />
+                            <DoubleAnimation Storyboard.TargetProperty="IconWidth"
+                                             Duration="0:0:0.1"
+                                             To="14" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseLeave">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="IconHeight"
+                                             Duration="0:0:0.1"
+                                             To="12" />
+                            <DoubleAnimation Storyboard.TargetProperty="IconWidth"
+                                             Duration="0:0:0.1"
+                                             To="12" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

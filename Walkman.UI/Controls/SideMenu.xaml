@@ -10,24 +10,7 @@
              d:DesignHeight="450"
              d:DesignWidth="273.606">
     <UserControl.Resources>
-        <Style x:Key="MenuItemStyle"
-               TargetType="{x:Type customcontrols:CustomizableButton}">
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="IconHeight"
-                    Value="12" />
-            <Setter Property="IconWidth"
-                    Value="12" />
-            <Setter Property="HorizontalAlignment" 
-                    Value="Left"/>
-            <Setter Property="TextContentFontWeight"
-                    Value="Medium" />
-            <Setter Property="TextContentMargin"
-                    Value="5,0,0,0" />
-            <Setter Property="Margin"
-                    Value="0,7" />
-            <Setter Property="Height"
-                    Value="18" />
-        </Style>
+       
         
     </UserControl.Resources>
     <Border Style="{StaticResource TransparentBorder}">
@@ -37,21 +20,22 @@
         </Border.Background>
         <Grid>
             <StackPanel>
-                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                <customcontrols:CustomizableButton Style="{StaticResource RegularButtonStyle}"
                                                    TextContent="Setting"
                                                    IconHeight="10"
+                                                   Margin="2,0,0,0"
                                                    IconWidth="10"
                                                    IconContent="{StaticResource Gear}" />
 
-                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                <customcontrols:CustomizableButton Style="{StaticResource RegularButtonStyle}"
                                                    TextContent="Home"
                                                    IconContent="{StaticResource Home}" />
 
-                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                <customcontrols:CustomizableButton Style="{StaticResource RegularButtonStyle}"
                                                    TextContent="Search"
                                                    IconContent="{StaticResource Search}"/>
 
-                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                <customcontrols:CustomizableButton Style="{StaticResource RegularButtonStyle}"
                                                    TextContent="Radio"
                                                    IconContent="{StaticResource Radio}" />
 
@@ -61,27 +45,58 @@
                         Foreground="#878787"
                         FontSize="16" />
 
-                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                <customcontrols:CustomizableButton Style="{StaticResource RegularButtonStyle}"
                                                    TextContent="Rock"
                                                    IconContent="{StaticResource MusicNote}" />
-                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                <customcontrols:CustomizableButton Style="{StaticResource RegularButtonStyle}"
                                                    TextContent="Chill"
                                                    IconContent="{StaticResource MusicNote}" />
 
-                <customcontrols:CustomizableButton Style="{StaticResource MenuItemStyle}"
+                <customcontrols:CustomizableButton Style="{StaticResource RegularButtonStyle}"
                                                    TextContent="Pop"
                                                    IconContent="{StaticResource MusicNote}"/>
             </StackPanel>
             <customcontrols:CustomizableButton VerticalAlignment="Bottom"
                                                CornerRadius="12"
-                                               TextContent="asdas"
+                                               TextContent="+Add"
                                                Width="70"
                                                Opacity="1"
                                                Height="30"
                                                FontSize="10"
                                                HorizontalContentAlignment="Center"
                                                Foreground="White"
-                                               Background="#6682DB" />
+                                               Background="{StaticResource App.SecondaryControlBrush}">
+                <customcontrols:CustomizableButton.Style>
+                    <Style TargetType="customcontrols:CustomizableButton">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="ButtonBase.MouseEnter">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="{StaticResource App.SecondaryControlLight}"
+                                                            Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                            FillBehavior="HoldEnd"
+                                                            Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="ButtonBase.MouseLeave">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="{StaticResource App.SecondaryControl}"
+                                                            Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                            FillBehavior="HoldEnd"
+                                                            Duration="0:0:0.2" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </customcontrols:CustomizableButton.Style>
+            </customcontrols:CustomizableButton>
         </Grid>
     </Border>
 </UserControl>
